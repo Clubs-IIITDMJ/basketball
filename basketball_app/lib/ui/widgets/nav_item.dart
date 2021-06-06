@@ -14,6 +14,8 @@ class NavBarItem extends StatelessWidget {
       onTap: () {
         locator<NavigationService>().navigateTo(navPath!);
       },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Container(
         child: Text(title!, style: TextStyle(fontSize: 15)),
       ),

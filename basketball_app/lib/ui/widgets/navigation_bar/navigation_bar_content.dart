@@ -48,7 +48,7 @@ class NavigationBarMobile extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          padding: EdgeInsets.symmetric(vertical: 40),
+          padding: EdgeInsets.symmetric(vertical: 30),
           onPressed: () {},
           icon: Icon(Icons.menu),
         ),
