@@ -41,7 +41,7 @@ class HomeText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double fontSize = width < 425 ? 30 : 40;
+    double fontSize = width < 500 ? 30 : 40;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,

@@ -1,7 +1,9 @@
+import 'package:basketball_app/core/services/locator.dart';
+import 'package:basketball_app/ui/screens/layout/layout_template.dart';
 import 'package:flutter/material.dart';
-import 'package:basketball_app/ui/screens/home/HomePage.dart';
 
 void main() {
+  setupLocator();
   runApp(MyApp());
 }
 
@@ -14,8 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Color(0XFF040404),
       ),
-      home: HomePage(),
       debugShowCheckedModeBanner: false,
+      home: LayoutTemplate(),
     );
   }
 }

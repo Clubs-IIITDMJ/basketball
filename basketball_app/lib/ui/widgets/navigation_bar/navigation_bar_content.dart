@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:basketball_app/ui/widgets/navigation_bar/navigation_bar_item.dart';
+import 'package:basketball_app/ui/widgets/logo.dart';
+import 'package:basketball_app/ui/widgets/nav_item.dart';
 
 class NavigationBarDesktop extends StatelessWidget {
   const NavigationBarDesktop({Key? key}) : super(key: key);
@@ -7,21 +8,16 @@ class NavigationBarDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return size.width > 835.0
+    return size.width > 910.0
         ? Container(
             height: 100,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(
+                Logo(
                   height: 80,
                   width: 150,
-                  alignment: Alignment.centerLeft,
-                  child: Icon(
-                    Icons.sports_basketball,
-                    size: 40,
-                    color: Colors.orange[900],
-                  ),
+                  iconSize: 40,
                 ),
                 Spacer(),
                 Row(
