@@ -19,6 +19,8 @@ class NavBarItem extends StatelessWidget {
         onTap: () {
           if (model.index != index) {
             model.index = index!;
+            if (Scaffold.of(context).isDrawerOpen)
+              Scaffold.of(context).openEndDrawer();
             locator<NavigationService>().navigateTo(navPath!);
           }
         },

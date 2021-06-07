@@ -49,7 +49,9 @@ class NavigationBarMobile extends StatelessWidget {
       children: [
         IconButton(
           padding: EdgeInsets.symmetric(vertical: 30),
-          onPressed: () {},
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
           icon: Icon(Icons.menu),
         ),
       ],

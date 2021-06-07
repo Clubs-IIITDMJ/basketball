@@ -25,7 +25,7 @@ class AboutContentMobile extends StatelessWidget {
           margin: EdgeInsets.only(top: 20),
           height: size.height / 2,
           width: size.width * 0.8,
-          color: Colors.grey,
+          color: Colors.black,
         ),
       ],
     );
@@ -49,7 +49,7 @@ class AboutContentDesktop extends StatelessWidget {
             Container(
               height: size.height * 0.6,
               width: (size.width * 0.8) / 2,
-              color: Colors.grey,
+              color: Colors.black,
             ),
             Container(
               height: size.height * 0.6,

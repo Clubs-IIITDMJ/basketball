@@ -10,7 +10,6 @@ class GalleryPage extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 30),
       height: size.height * 0.8,
       width: size.width * 0.8,
-      color: Colors.grey,
       child: PageView(
         children: [
           Center(

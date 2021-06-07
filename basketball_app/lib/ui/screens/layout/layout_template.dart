@@ -12,10 +12,11 @@ class LayoutTemplate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    double padding = size.width < 500 ? 20 : 80;
+    double padding = size.width < 500 ? 20 : 60;
 
     return Scaffold(
       drawer: size.width < 910.0 ? Sidebar() : null,
+      drawerEnableOpenDragGesture: false,
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: padding),
         alignment: Alignment.topCenter,
