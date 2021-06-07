@@ -1,6 +1,8 @@
 import 'package:basketball_app/core/services/locator.dart';
 import 'package:basketball_app/ui/screens/layout/layout_template.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'core/models/navigator_index.dart';
 
 void main() {
   setupLocator();
@@ -8,16 +10,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Basketball IIITDMJ',
-      theme: ThemeData.dark().copyWith(
-        scaffoldBackgroundColor: Color(0XFF040404),
+    return ChangeNotifierProvider(
+      create: (context) => Index(),
+      child: MaterialApp(
+        title: 'Basketball IIITDMJ',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Color(0XFF040404),
+        ),
+        debugShowCheckedModeBanner: false,
+        home: LayoutTemplate(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: LayoutTemplate(),
     );
   }
 }

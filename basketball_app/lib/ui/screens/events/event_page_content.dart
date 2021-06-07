@@ -10,10 +10,11 @@ class EventsContentMobile extends StatelessWidget {
     return Column(
       children: [
         Text('Events', style: TextStyle(fontSize: 40)),
-        ImageBox(
+        SizedBox(height: 40),
+        imageBox(
             size.height * 0.6, size.width * 0.8, 'images/gusto.JPG', 'GUSTO'),
         SizedBox(height: 60),
-        ImageBox(
+        imageBox(
             size.height * 0.6, size.width * 0.8, 'images/match.JPG', 'ENTHUSE'),
       ],
     );
@@ -35,9 +36,9 @@ class EventsContentDesktop extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ImageBox(
+            imageBox(
                 size.height / 2, size.width * 0.4, 'images/gusto.JPG', 'GUSTO'),
-            ImageBox(size.height / 2, size.width * 0.4, 'images/match.JPG',
+            imageBox(size.height / 2, size.width * 0.4, 'images/match.JPG',
                 'ENTHUSE'),
           ],
         ),
@@ -46,7 +47,7 @@ class EventsContentDesktop extends StatelessWidget {
   }
 }
 
-Widget ImageBox(double height, double width, String path, String title) {
+Widget imageBox(double height, double width, String path, String title) {
   return Column(
     children: [
       Container(

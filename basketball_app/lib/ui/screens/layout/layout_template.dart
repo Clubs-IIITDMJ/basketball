@@ -2,7 +2,6 @@ import 'package:basketball_app/core/routes/route_generator.dart';
 import 'package:basketball_app/core/routes/route_names.dart';
 import 'package:basketball_app/core/services/locator.dart';
 import 'package:basketball_app/core/services/navigation_service.dart';
-import 'package:basketball_app/ui/screens/events/events_page.dart';
 import 'package:basketball_app/ui/widgets/drawer/side_bar.dart';
 import 'package:basketball_app/ui/widgets/navigation_bar/navigation_bar.dart';
 import 'package:flutter/material.dart';
