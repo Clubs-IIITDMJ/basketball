@@ -19,7 +19,7 @@ class TeamContentMobile extends StatelessWidget {
           SizedBox(height: 20),
           profileBox(size),
           SizedBox(height: 20),
-          bottom(height: 150),
+          bottomMobile(),
         ],
       ),
     );
@@ -113,6 +113,38 @@ Widget bottom({double height = 150, bool isMobile = false}) {
             )
         ],
       ),
+    ),
+  );
+}
+
+Widget bottomMobile({double height = 100, bool isMobile = false}) {
+  TextStyle textStyle = TextStyle(color: Colors.white, fontSize: 10);
+  return Container(
+    height: height,
+    width: double.maxFinite,
+    padding: EdgeInsets.only(top: 8, bottom: 8),
+    child: Column(
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(
+              Icons.location_on_outlined,
+              color: Colors.white,
+              size: 8,
+            ),
+            SizedBox(width: 2),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('PDPM IIIT Jabalpur', style: textStyle),
+                Text('Dumna Airport Road, Dumna - 482005', style: textStyle),
+                Text('MP,India', style: textStyle),
+              ],
+            )
+          ],
+        )
+      ],
     ),
   );
 }
