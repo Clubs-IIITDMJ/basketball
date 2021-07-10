@@ -5,7 +5,7 @@ class TeamContentMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double size = MediaQuery.of(context).size.width / 2;
+    double size = MediaQuery.of(context).size.width / 3;
     return Container(
       child: ListView(
         children: [
@@ -19,7 +19,7 @@ class TeamContentMobile extends StatelessWidget {
           SizedBox(height: 20),
           profileBox(size),
           SizedBox(height: 20),
-          bottom(height: 150),
+          bottom(context),
         ],
       ),
     );
@@ -33,6 +33,7 @@ class TeamContentDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     double size = MediaQuery.of(context).size.width / 5;
     return Container(
+      width: size * 5,
       child: ListView(
         children: [
           Row(
@@ -52,7 +53,7 @@ class TeamContentDesktop extends StatelessWidget {
             ],
           ),
           SizedBox(height: 50),
-          bottom(),
+          bottom(context),
         ],
       ),
     );
@@ -80,39 +81,78 @@ Widget profileBox(double size) {
   );
 }
 
-Widget bottom({double height = 150, bool isMobile = false}) {
+Widget bottom(BuildContext context, {double height = 150}) {
   TextStyle textStyle = TextStyle(color: Colors.white);
-  return Container(
-    height: height,
-    width: double.maxFinite,
-    padding: EdgeInsets.only(top: 20, bottom: 20),
-    child: FittedBox(
-      fit: BoxFit.contain,
-      alignment: Alignment.centerLeft,
-      child: Column(
-        children: [
-          if (!isMobile)
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(Icons.location_on_outlined, color: Colors.white),
-                SizedBox(width: 20),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Pandit Dwarka Prasad Mishra', style: textStyle),
-                    Text('Indian Institute of Information Technology,',
-                        style: textStyle),
-                    Text('Design and Manufacturing,Jabalpur', style: textStyle),
-                    Text('Dumna Airport Road, Dumna - 482005',
-                        style: textStyle),
-                    Text('Madhya Pradesh,India', style: textStyle),
-                  ],
-                )
-              ],
-            )
-        ],
-      ),
-    ),
-  );
+  return MediaQuery.of(context).size.width < 910.0
+      ? Container()
+      : Container(
+          padding: EdgeInsets.only(top: 20, bottom: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.location_on_outlined, color: Colors.white),
+                  SizedBox(width: 20),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Pandit Dwarka Prasad Mishra', style: textStyle),
+                      Text('Indian Institute of Information Technology,',
+                          style: textStyle),
+                      Text('Design and Manufacturing,Jabalpur',
+                          style: textStyle),
+                      Text('Dumna Airport Road, Dumna - 482005',
+                          style: textStyle),
+                      Text('Madhya Pradesh,India', style: textStyle),
+                    ],
+                  )
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.copyright,
+                        size: 10,
+                      ),
+                      SizedBox(width: 4),
+                      Text(
+                        'Copyright 2021 IIITDM Jabalpur',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Developed By :'),
+                      Text(
+                        ' Ritesh Bhandaria',
+                        style: TextStyle(color: Colors.orange.shade900),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Text('Designed By  :'),
+                      Text(
+                        ' Arindam Upadhyay',
+                        style: TextStyle(color: Colors.orange.shade900),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        );
 }
